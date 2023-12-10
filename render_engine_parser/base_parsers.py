@@ -48,7 +48,7 @@ class BasePageParser:
         return parse_content(content)
 
     @staticmethod
-    def parse(content: str, page = None):
+    def parse(content: str, page=None):
         """
         Parses content to be rendered into HTML
 
