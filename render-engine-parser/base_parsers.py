@@ -48,7 +48,7 @@ class BasePageParser:
         return parse_content(content)
 
     @staticmethod
-    def parse(content: str, page: "Page" = None):
+    def parse(content: str, page = None):
         """
         Parses content to be rendered into HTML
 
@@ -56,6 +56,6 @@ class BasePageParser:
 
         params:
             content: content to be rendered into HTML
-            page: Page object to gain access to attributes
+            page: Render Engine Page Content object to gain access to attributes
         """
         return content
