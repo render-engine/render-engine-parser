@@ -24,9 +24,9 @@ jobs:
       # Update output format to enable automatic inline annotations.
       - name: Run Ruff
         run: |
-            ruff check --fix --output-format=github render-engine-parser
-            
-            ruff format src
+            ruff check --fix --output-format=github render_engine_parser
+
+            ruff format render_engine_parser
 
       - name: Markdown Lint base-files
         uses: DavidAnson/markdownlint-cli2-action@v14
