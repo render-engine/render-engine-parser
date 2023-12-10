@@ -3,7 +3,7 @@ requires = ["setuptools", "setuptools_scm", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "render_engine_parsers"
+name = "render_engine_parser"
 dynamic = ["version"]
 description = "Parser System for Render Engine"
 readme = "README.md"
