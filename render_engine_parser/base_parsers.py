@@ -51,7 +51,7 @@ class BasePageParser:
     def parse(
         content: str,
         extras: dict[str, any] | None = None,
-        ) -> str:
+    ) -> str:
         """
         Parses content to be rendered into HTML
 
