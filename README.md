@@ -13,6 +13,11 @@ Some pages will be looking for information that is provided in the frontmatter. 
 > **NOTE**
 > These attributes **CANNOT** be used in the content itself, but you can use them in the template generation.
 
+
+## Parsing the Data
+
+The base parser doesn't is a pass-thru parser meaning the content input will be passed through.
+
 ```md
 ---
 title: "Spider-Man"
