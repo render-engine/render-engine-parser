@@ -62,3 +62,15 @@ class BasePageParser:
             extras: dictionary with extras to augment attributes
         """
         return content
+
+    def create_entry(self, content: str = "Hello World", **kwargs) -> str:
+        """
+        Writes the content type that would be parsed to the content_path
+        """
+
+        post = frontmatter.Post(content)
+
+        for key, val in kwargs.items():
+            post[key] = val
+
+        return frontmatter.dumps(post)
