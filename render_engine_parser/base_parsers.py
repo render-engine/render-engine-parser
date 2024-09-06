@@ -63,9 +63,15 @@ class BasePageParser:
         """
         return content
 
-    def create_entry(self, content: str = "Hello World", **kwargs) -> str:
+    @staticmethod
+    def create_entry(
+        *, filepath: pathlib.Path | None, content: str = "Hello World", **kwargs
+    ) -> str:
         """
-        Writes the content type that would be parsed to the content_path
+        Writes the content type that would be parsed to the content_path.
+
+        attrs:
+          filepath: Only used if reading from an existing path
         """
 
         post = frontmatter.Post(content)
