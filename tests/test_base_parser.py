@@ -1,3 +1,4 @@
+import frontmatter
 import pytest
 
 from render_engine_parser.base_parsers import BasePageParser, parse_content
@@ -52,3 +53,17 @@ def test_base_parser_parse_content_path(base_content_path):
 
     expected_result = ({"title": "This is a Test"}, "# This is a Test")
     assert expected_result == BasePageParser.parse_content_path(base_content_path)
+
+
+def test_base_parser_net_entry():
+    data = BasePageParser.create_entry(
+        filepath=None,  # reminder this is ignored in the base case
+        content="This is a Test",
+        title="Untitled Entry",
+        slug="untitled-entry",
+    )
+
+    post = frontmatter.loads(data)
+    assert post["title"] == "Untitled Entry"
+    assert post["slug"] == "untitled-entry"
+    assert post.content == "This is a Test"
