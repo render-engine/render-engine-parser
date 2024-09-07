@@ -55,9 +55,15 @@ def test_base_parser_parse_content_path(base_content_path):
     assert expected_result == BasePageParser.parse_content_path(base_content_path)
 
 
+def test_base_parser_empty_entry():
+    """Tests that no content is required"""
+    data = BasePageParser.create_entry()
+    post = frontmatter.loads(data)
+    assert post.content == ""
+
+
 def test_base_parser_net_entry():
     data = BasePageParser.create_entry(
-        filepath=None,  # reminder this is ignored in the base case
         content="This is a Test",
         title="Untitled Entry",
         slug="untitled-entry",
