@@ -57,7 +57,6 @@ def test_base_parser_parse_content_path(base_content_path):
 
 def test_base_parser_net_entry():
     data = BasePageParser.create_entry(
-        filepath=None,  # reminder this is ignored in the base case
         content="This is a Test",
         title="Untitled Entry",
         slug="untitled-entry",
