@@ -62,3 +62,19 @@ class BasePageParser:
             extras: dictionary with extras to augment attributes
         """
         return content
+
+    @staticmethod
+    def create_entry(*, filepath: pathlib.Path | None, content: str = "Hello World", **kwargs) -> str:
+        """
+        Writes the content type that would be parsed to the content_path.
+
+        attrs:
+          filepath: Only used if reading from an existing path
+        """
+
+        post = frontmatter.Post(content)
+
+        for key, val in kwargs.items():
+            post[key] = val
+
+        return frontmatter.dumps(post)
