@@ -1,6 +1,5 @@
 import frontmatter
 import pytest
-
 from render_engine_parser.base_parsers import BasePageParser, parse_content
 
 

@@ -1,0 +1,39 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+    "name": "Render Engine",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "IMAGE": "python:3.12"
+        }
+    },
+    "postCreateCommand": ". .devcontainer/setup.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                    "python.formatting.provider": "charliermarsh.ruff",
+                    "python.testing.pytestEnabled": true,
+                    "python.testing.pytestPath": "pytest",
+                    "python.testing.unittestEnabled": false,
+                    "python.editor.formatOnSave": true,
+                    "python.editor.codeActionsOnSave": {"source.fixAll": true},
+                    "python.testing.pytestArgs": [
+                        "tests"
+                    ],
+                    ".markdownlint-cli2.ignores": [".gitignore"]
+
+                },
+            "extensions": [
+				"ms-python.python",
+				"charliermarsh.ruff",
+				"github.github-actions",
+				"github.github",
+				"yzhang.markdown-all-in-one",
+				"DavidAnson.vscode-markdownlint"
+			]
+        }
+    }
+}

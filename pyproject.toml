@@ -17,7 +17,7 @@ dev = [
     "pytest",
     "pytest-cov",
     "ruff",
-    ]
+]
 
 
 [tool.setuptools_scm]
@@ -37,8 +37,7 @@ version_toml = "pyproject.toml:project.version"
 branch = "main"
 
 [tool.ruff]
-select = ["E", "F", "I", "UP"]
+lint.select = ["E", "F", "I", "UP"]
 target-version = "py311"
 line-length = 120
 src = ["src"]
-ignore-init-module-imports = true
